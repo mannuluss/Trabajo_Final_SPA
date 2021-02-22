@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="col-md-4" *ngFor="let item of Usuarios">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header bg-dark text-white d-flex justify-content-between">
+        <h4 class="card-title">{{ item.nombres }} {{ item.apellidos }}</h4>
+        <div class="justify-content-end">
+            <button class="btn btn-danger" (click)="Delete(item.id)" > 
+              <img src="../../assets/trash.svg"> 
+            </button>
+            <button class="btn btn-success" routerLink="{{item.id}}" (click)="SetIdUser(item.id)" > 
+              <img src="../../assets/pencil.svg"> 
+            </button>
+        </div>
+      </div>
+      <div class="card-body">
+        <h6 class="card-subtitle mb-2 text-muted">{{ item.idtipodocumento }} {{ item.documento }}</h6>
+        Telefono: {{ item.telefono }}<br>
+        Residencia: {{ item.residencia }}<br>
+        Date: {{item.nacimiento}}<br>
+        Email: {{ item.email }}<br>
+        <small>Usuario: {{ item.usuario }}</small><br>
+        <small>Clave: {{ item.clave }}</small>
+      </div>
+      
+    </div>
+  </div>
+  </div>
+  
+</div>
+

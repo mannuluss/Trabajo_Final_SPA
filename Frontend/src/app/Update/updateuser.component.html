@@ -1,0 +1,60 @@
+<form class="row">
+    <div class="offset-md-4">
+    <h1>Editando Datos</h1>
+    <div class="card" style="width: 500px;">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm">
+                           <label for="name">Nombres</label>
+                            <input type="text" class="form-control" name="name" [(ngModel)]="User.nombres">
+                        </div>
+                        <div class="col-sm">
+                            <label for="nickname">Apellido</label>
+                            <input type="text" class="form-control" name="nickname" [(ngModel)]="User.apellidos">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <label for="type">Tipo</label>
+                            <select name="type" class="form-select" [(ngModel)]="User.idtipodocumento">
+                                <option *ngFor="let item of tipoId" value="{{item.id}}" [selected]="item.id == User.idtipodocumento">{{item.nombre}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="doc">documento</label>
+                            <input type="text" class="form-control" name="doc" [(ngModel)]="User.documento">
+                        </div>
+                    </div>
+                        
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="user">Usuario</label>
+                            <input type="text" class="form-control" name="user" [(ngModel)]="User.usuario">
+                        </div>
+                        <div class="col-sm">
+                            <label for="birthday">Fecha Nacimiento</label>
+                            <input type="date" class="form-control" name="birthday" [(ngModel)]="User.nacimiento">
+                        </div>
+                    </div>
+                        
+
+                        <label for="email">E-mail</label>
+                        <input type="email" class="form-control" name="email" [(ngModel)]="User.email">
+    
+                        <label for="tel">Telefono</label>
+                        <input type="number" class="form-control" name="tel" [(ngModel)]="User.telefono">
+    
+                        <label for="password">Contraseña</label>
+                        <input type="text" class="form-control" name="password" [(ngModel)]="User.clave">
+    
+                        <label for="city">ciudad</label>
+                        <select name="city" id="city" class="form-select" [(ngModel)]="User.residencia">
+                            <option *ngFor="let item of ciudades" value="{{item.id}}" [selected]="item.id == User.residencia" >{{item.nombre}}</option>
+                        </select>
+                    
+            </div>
+            <button class="btn btn-success btn-block" (click)="UpdateUsuario()" >Enviar</button>
+    </div>
+</div>
+</form>
