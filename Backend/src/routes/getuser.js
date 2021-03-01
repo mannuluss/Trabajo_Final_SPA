@@ -145,6 +145,7 @@ router.post('/create/', (req,res) =>{
 
 //delete usuario
 router.delete('/delete/:id', (req, res)=>{
+    console.log("se llama a /delete");
     id = req.params.id;
     mysqlConnection.query( 'CALL DeletePersona(?)',[id] ,(err,rows,fields)=>{
             if (err){
