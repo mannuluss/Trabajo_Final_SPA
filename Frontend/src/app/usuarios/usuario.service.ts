@@ -4,13 +4,14 @@ import { Usuario } from './usuario';
 import { Observable, of} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Ciudad } from './ciudad';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  apiUrl =  'http://localhost:3000';
+  apiUrl = environment.apiUrl;
 
   constructor(private http:HttpClient) { }
 

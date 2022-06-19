@@ -141,5 +141,8 @@ DELETE FROM persona WHERE id=_id_;
 END
 $$
 
-
+insert into ciudad(nombre,descripcion) values("bucaramanga","Santander"), ("bogota","Cundinamarca") , ("medellin","Antioquia");
+insert into tipodocumento (nombre,descripcion) values("C.C", "cedula de ciudadania"), ("T.I", "tarjeta de identidad");
+INSERT INTO trabajo_spa.persona (nombres,apellidos,idtipodocumento,documento,residencia,nacimiento,email,telefono,usuario,PASSWORD) VALUES
+	 ('Tony','Stark',1,1053245646,1,'2022-06-17','filantrapoPlayboy@marvel.com','316546547','IRON MAN','PepperPotts');
 

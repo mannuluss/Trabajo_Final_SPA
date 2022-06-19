@@ -6,6 +6,7 @@ const mysqlConnection = require('../database');
 
 // Read Usuario
 router.get('/', (req,res) => {
+    console.log("get user")
     mysqlConnection.query('CALL GetPersonas', (err,rows , fields) => {
         if (err){
             console.log('ha ocurrido un error');
@@ -34,7 +35,8 @@ router.get('/usuario/:id',(req,res) =>{
 
 })
 
-router.get('/ciudad',(req,res) =>{ 
+router.get('/ciudad',(req,res) =>{
+    //console.log("GET ")
     mysqlConnection.query('SELECT * FROM ciudad', (err,rows,fields) => {
         if (err){
             console.log('ha ocurrido un error');
@@ -63,7 +65,7 @@ router.get('/tipo',(req,res) =>{
 })
 
 //update usuario
-router.post('/update/', (req,res) =>{ 
+router.post('/update/', (req,res) =>{
     const {id,
         nombres,
         apellidos,
